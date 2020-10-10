@@ -9,8 +9,8 @@ let settingsLoadTime = 0;
 let settingsChangeTime = 0;
 
 const DEFAULT_STORAGE_OBJECT = {
-  source: 'DIRECT',
-  url: 'http://_url_to_your_config_file.json',
+  source: 'URL',
+  url: 'file:///home/dashboard/dashboard-config.json',
   configFile: JSON.stringify(sampleConfig, null, 2),
 };
 
@@ -49,6 +49,7 @@ function saveToDisc(storage) {
 
 async function loadConfigFileFromUrl(url) {
   return new Promise((resolve, reject) => {
+
     jQuery.ajax({
       url: url,
       dataType: 'text',
@@ -71,7 +72,7 @@ function readSettingsFromDisc() {
       if (jQuery.isEmptyObject(allStorage)) {
         // This is the first use of the plugin
         analytics.install();
-        openSettingsPage();
+//        openSettingsPage();
         resolve({ ...DEFAULT_STORAGE_OBJECT });
       } else {
         resolve({ ...allStorage });
