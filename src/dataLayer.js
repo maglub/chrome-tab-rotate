@@ -10,7 +10,7 @@ let settingsChangeTime = 0;
 
 const DEFAULT_STORAGE_OBJECT = {
   source: 'URL',
-  url: 'file:///home/dashboard/dashboard-config.json',
+  url: 'file:///home/dashboard/dashboard-config-screen-1.json',
   configFile: JSON.stringify(sampleConfig, null, 2),
 };
 
